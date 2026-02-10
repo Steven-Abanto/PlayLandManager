@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Met_Pago {
+public class MetPago {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

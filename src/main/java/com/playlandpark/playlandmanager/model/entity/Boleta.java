@@ -33,12 +33,13 @@ public class Boleta {
 
     private String tipoDocCli;
     private String numeDocCli;
-    private String metodoPago;
     private Double subtotal;
     private Double dsctoTotal;
     private Double impuesto;
     private Double total;
     private String estado;
-    private LocalDateTime fechaHora;
+
+    @Column(nullable = false)
+    private LocalDateTime fechaHora = LocalDateTime.now();
 }
 

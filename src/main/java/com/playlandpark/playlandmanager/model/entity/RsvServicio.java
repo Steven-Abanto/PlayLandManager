@@ -13,7 +13,7 @@ import java.time.LocalTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Rsv_Servicio {
+public class RsvServicio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReserva;

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Mov_Inventario {
+public class MovInventario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idMovInv;
