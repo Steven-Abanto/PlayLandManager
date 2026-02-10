@@ -1,10 +1,8 @@
 package com.playlandpark.playlandmanager.model.dto.boleta;
 
-import com.playlandpark.playlandmanager.model.dto.caja.CajaRequest;
-import com.playlandpark.playlandmanager.model.dto.caja.CajaResponse;
-import com.playlandpark.playlandmanager.model.dto.detboleta.DetBoletaResponse;
-import com.playlandpark.playlandmanager.model.dto.empleado.EmpleadoRequest;
-import com.playlandpark.playlandmanager.model.dto.empleado.EmpleadoResponse;
+import com.playlandpark.playlandmanager.model.dto.caja.CajaBoletaResponse;
+import com.playlandpark.playlandmanager.model.dto.boletadetalle.BoletaDetalleResponse;
+import com.playlandpark.playlandmanager.model.dto.empleado.EmpleadoBoletaResponse;
 import com.playlandpark.playlandmanager.model.dto.metpago.MetPagoResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,8 +26,8 @@ public class BoletaResponse {
     private Double total;
     private String estado;
     private LocalDateTime fechaHora;
-    private CajaResponse caja;
-    private EmpleadoResponse empleado;
+    private CajaBoletaResponse caja;
+    private EmpleadoBoletaResponse empleado;
     private List<MetPagoResponse> metodosPago;
-    private List<DetBoletaResponse> detalles;
+    private List<BoletaDetalleResponse> detalles;
 }

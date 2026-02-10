@@ -1,4 +1,4 @@
-package com.playlandpark.playlandmanager.model.dto.carrito;
+package com.playlandpark.playlandmanager.model.dto.caja;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CarritoRequest {
-    private Integer idUsuario;
+public class CajaBoletaResponse {
+    private String codCaja;
 }

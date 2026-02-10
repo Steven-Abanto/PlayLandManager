@@ -1,4 +1,4 @@
-package com.playlandpark.playlandmanager.model.dto.detboleta;
+package com.playlandpark.playlandmanager.model.dto.boletadetalle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,8 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DetBoletaRequest {
+public class BoletaDetalleRequest {
     private Integer idProducto;
     private Integer cantidad;
-    private Integer dscto;
+    private Double dscto;
 }

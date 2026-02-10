@@ -8,14 +8,14 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "venta")
+@Table(name = "mov_venta")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class MovVenta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idVenta;
+    private Integer idMovVenta;
 
     @ManyToOne
     @JoinColumn(name = "idCaja")

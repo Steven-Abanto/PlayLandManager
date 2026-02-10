@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
 @Entity
 @Table(name = "carrito")
 @Data
@@ -19,13 +22,12 @@ public class Carrito {
     @JoinColumn(name = "idUsuario")
     private Usuario usuario;
 
-    @ManyToOne
-    @JoinColumn(name = "idProducto")
-    private Producto producto;
+    private String estado;
 
-    private Double precio;
-    private Integer cantidad;
-    private Double dscto;
-    private Double subtotal;
+    @Column(name = "fecha_creacion")
+    private LocalDateTime fechaCreacion;
+
+    @OneToMany(mappedBy = "carrito", cascade = CascadeType.ALL)
+    private List<CarritoDetalle> detalles;
 }
 

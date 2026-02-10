@@ -1,4 +1,4 @@
-package com.playlandpark.playlandmanager.model.dto.detboleta;
+package com.playlandpark.playlandmanager.model.dto.boletadetalle;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class DetBoletaResponse {
+public class BoletaDetalleResponse {
     private Integer idBoleta;
     private Integer idProducto;
     private String descripcion;

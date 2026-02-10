@@ -7,13 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CajaResponse {
+public class CajaCierreRequest {
     private Integer idCaja;
-    private String codCaja;
-    private String usuApertura;
-    private Double montoApertura;
     private String usuCierre;
     private Double montoCierre;
-    private String turno;
-    private String estado;
 }

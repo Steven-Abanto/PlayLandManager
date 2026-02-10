@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "boleta")
@@ -18,7 +19,7 @@ public class Boleta {
     private Integer idBoleta;
 
     @ManyToOne
-    @JoinColumn(name = "idCaja")
+    @JoinColumn(name = "idCaja", nullable = false)
     private Caja caja;
 
     @ManyToOne
@@ -33,6 +34,8 @@ public class Boleta {
 
     private String tipoDocCli;
     private String numeDocCli;
+    @OneToMany(mappedBy = "boleta", cascade = CascadeType.ALL)
+    private List<MetPago> pagos;
     private Double subtotal;
     private Double dsctoTotal;
     private Double impuesto;
