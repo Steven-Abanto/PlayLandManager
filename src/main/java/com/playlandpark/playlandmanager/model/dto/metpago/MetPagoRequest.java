@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MetPagoRequest {
+    private Integer idBoleta;
     private String metodoPago;
     private Double monto;
 }

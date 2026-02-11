@@ -36,8 +36,9 @@ public class Empleado {
     @Column(nullable = false)
     private Integer local;
 
-    @Column(nullable = false)
-    private Integer cargo;
+    @ManyToOne
+    @JoinColumn(name = "idCargo", nullable = false)
+    private Cargo cargo;
 
     @Column(nullable = false)
     private LocalDate fechaInicio;

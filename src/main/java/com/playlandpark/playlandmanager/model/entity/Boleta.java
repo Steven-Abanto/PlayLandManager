@@ -32,10 +32,13 @@ public class Boleta {
     @Column(nullable = false, unique = true)
     private String numeDoc;
 
-    private String tipoDocCli;
-    private String numeDocCli;
+    @ManyToOne
+    @JoinColumn(name = "idCliente")
+    private Cliente cliente;
+
     @OneToMany(mappedBy = "boleta", cascade = CascadeType.ALL)
     private List<MetPago> pagos;
+
     private Double subtotal;
     private Double dsctoTotal;
     private Double impuesto;
