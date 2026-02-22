@@ -35,7 +35,10 @@ public class Cliente {
     @Column(unique = true)
     private String telefono;
 
+    @Column(nullable = false)
     private String direccion;
-    private Boolean activo;
+
+    @Column(nullable = false)
+    private Boolean activo = true;
 }
 

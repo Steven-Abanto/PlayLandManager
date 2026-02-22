@@ -1,5 +1,6 @@
 package com.playlandpark.playlandmanager.model.entity;
 
+import com.playlandpark.playlandmanager.model.enums.EstadoReserva;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,11 +20,11 @@ public class RsvServicio {
     private Integer idReserva;
 
     @ManyToOne
-    @JoinColumn(name = "idServicio")
-    private Servicio servicio;
+    @JoinColumn(name = "idProducto", nullable = false)
+    private Producto producto;
 
     @ManyToOne
-    @JoinColumn(name = "idCliente")
+    @JoinColumn(name = "idCliente", nullable = false)
     private Cliente cliente;
 
     @Column(nullable = false)
@@ -36,7 +37,10 @@ public class RsvServicio {
     private LocalTime horaFin;
 
     private Integer cntPersonas;
-    private String estado;
+
+    @Enumerated(EnumType.STRING)
+    private EstadoReserva estado;
+
     private String observaciones;
 }
 

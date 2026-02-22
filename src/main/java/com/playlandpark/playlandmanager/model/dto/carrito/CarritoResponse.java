@@ -1,17 +1,15 @@
 package com.playlandpark.playlandmanager.model.dto.carrito;
 
 import com.playlandpark.playlandmanager.model.dto.carritodetalle.CarritoDetalleResponse;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.playlandpark.playlandmanager.model.dto.summary.UsuarioSummary;
+
+import java.time.LocalDateTime;
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class CarritoResponse {
-    private Integer idCarrito;
-    private String estado;
-    private List<CarritoDetalleResponse> items;
-    private Double total;
-}
+public record CarritoResponse(
+        Integer idCarrito,
+        UsuarioSummary usuario,
+        String estado,
+        LocalDateTime fechaCreacion,
+        List<CarritoDetalleResponse> detalles
+) {}

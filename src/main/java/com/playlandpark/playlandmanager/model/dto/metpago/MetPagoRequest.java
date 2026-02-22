@@ -1,14 +1,8 @@
 package com.playlandpark.playlandmanager.model.dto.metpago;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class MetPagoRequest {
-    private Integer idBoleta;
-    private String metodoPago;
-    private Double monto;
-}
+public record MetPagoRequest(
+        String metodoPago,
+        BigDecimal monto
+) {}

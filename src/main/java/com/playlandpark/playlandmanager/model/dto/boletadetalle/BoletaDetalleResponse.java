@@ -1,18 +1,14 @@
 package com.playlandpark.playlandmanager.model.dto.boletadetalle;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class BoletaDetalleResponse {
-    private Integer idBoleta;
-    private Integer idProducto;
-    private String descripcion;
-    private Integer cantidad;
-    private Double precio;
-    private Double dscto;
-    private Double subtotal;
+public record BoletaDetalleResponse (
+    Integer idBoleta,
+    Integer idProducto,
+    String descripcion,
+    Integer cantidad,
+    BigDecimal precio,
+    BigDecimal descuento,
+    BigDecimal subtotal
+){
 }

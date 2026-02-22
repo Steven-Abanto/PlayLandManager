@@ -24,13 +24,28 @@ public class Empleado {
     @Column(nullable = false, unique = true)
     private String numeDoc;
 
+    @Column(nullable = false)
     private String nombre;
+
+    @Column(nullable = false)
     private String apePaterno;
+
+    @Column(nullable = false)
     private String apeMaterno;
+
+    @Column(nullable = false)
     private String genero;
+
+    @Column(nullable = false)
     private LocalDate fechaNac;
+
+    @Column(nullable = false)
     private String correo;
+
+    @Column(nullable = false)
     private String telefono;
+
+    @Column(nullable = false)
     private String direccion;
 
     @Column(nullable = false)
@@ -44,6 +59,8 @@ public class Empleado {
     private LocalDate fechaInicio;
 
     private LocalDate fechaFin;
-    private Boolean activo;
+
+    @Column(nullable = false)
+    private Boolean activo = true;
 }
 

@@ -19,11 +19,11 @@ public class Mantenimiento {
     private Integer idMantenimiento;
 
     @ManyToOne
-    @JoinColumn(name = "idEmpleado")
+    @JoinColumn(name = "idEmpleado", nullable = false)
     private Empleado empleado;
 
     @ManyToOne
-    @JoinColumn(name = "idJuego")
+    @JoinColumn(name = "idJuego", nullable = false)
     private Juego juego;
 
     @Column(nullable = false)

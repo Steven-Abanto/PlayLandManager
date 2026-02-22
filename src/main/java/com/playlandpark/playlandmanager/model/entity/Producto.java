@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+import java.util.Set;
+
 @Entity
 @Table(name = "producto")
 @Data
@@ -19,8 +22,8 @@ public class Producto {
     private String categoria;
     private String marca;
 
-    @Column(nullable = false)
-    private Double precio;
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal precio;
 
     @Column(nullable = false)
     private Integer stockMin;
@@ -36,6 +39,14 @@ public class Producto {
     @Column(nullable = false, unique = true)
     private String sku;
 
-    private Boolean activo;
+    @Column(nullable = false)
+    private Boolean esServicio = false;
+
+    @Column(nullable = false)
+    private Boolean activo = true;
+
+    //Búsqueda inversa para promociones del producto
+    @ManyToMany(mappedBy = "productos")
+    private Set<Promocion> promociones = new java.util.HashSet<>();
 }
 

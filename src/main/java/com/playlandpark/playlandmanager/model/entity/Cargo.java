@@ -1,5 +1,6 @@
 package com.playlandpark.playlandmanager.model.entity;
 
+import com.playlandpark.playlandmanager.model.enums.RolesEmpleado;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -15,7 +16,13 @@ public class Cargo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCargo;
 
-    private String descripcion;
-    private Boolean activo;
+    // CAJERO,
+    // OPERARIO_JUEGO,
+    // OPERARIO_MANTE,
+    // GERENTE_LOCAL,
+    // ADMINISTRADOR
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RolesEmpleado rol;
 }
 

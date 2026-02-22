@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "caja")
 @Data
@@ -21,14 +23,13 @@ public class Caja {
     @Column(nullable = false)
     private String usuApertura;
 
-    @Column(nullable = false)
-    private Double montoApertura;
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal montoApertura;
 
-    @Column(nullable = false)
     private String usuCierre;
 
-    @Column(nullable = false)
-    private Double montoCierre;
+    @Column(precision = 15, scale = 2)
+    private BigDecimal montoCierre;
 
     private String turno;
     private String estado;

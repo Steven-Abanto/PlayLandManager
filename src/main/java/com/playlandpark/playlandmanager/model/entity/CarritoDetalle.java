@@ -5,10 +5,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 //Esta entidad es el detalle del carrito, o sea, los productos
 
 @Entity
-@Table(name = "carrito_detalle")
+@Table(name = "carrito_detalle",
+        uniqueConstraints = @UniqueConstraint(name = "uk_carrito_producto",
+                                              columnNames = {"idCarrito", "idProducto"}))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,8 +29,19 @@ public class CarritoDetalle {
     @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
 
-    private Double precio;
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal precio;
+
+    @Column(nullable = false)
     private Integer cantidad;
-    private Double descuento;
-    private Double subtotal;
+
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal descuento;
+
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal subtotal;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPromocion")
+    private Promocion promocion;
 }

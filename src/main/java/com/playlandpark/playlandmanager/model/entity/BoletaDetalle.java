@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "boleta_detalle")
 @Data
@@ -16,16 +18,27 @@ public class BoletaDetalle {
     private Integer idBoletaDetalle;
 
     @ManyToOne
-    @JoinColumn(name = "idBoleta")
+    @JoinColumn(name = "idBoleta", nullable = false)
     private Boleta boleta;
 
     @ManyToOne
-    @JoinColumn(name = "idProducto")
+    @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
 
-    private Double precio;
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal precio;
+
+    @Column(nullable = false)
     private Integer cantidad;
-    private Double dscto;
-    private Double subtotal;
+
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal descuento;
+
+    @Column(precision = 15, scale = 2, nullable = false)
+    private BigDecimal subtotal;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idPromocion")
+    private Promocion promocion;
 }
 

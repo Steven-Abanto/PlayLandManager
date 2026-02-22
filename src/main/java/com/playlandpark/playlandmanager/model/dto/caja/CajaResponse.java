@@ -1,19 +1,15 @@
 package com.playlandpark.playlandmanager.model.dto.caja;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.math.BigDecimal;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class CajaResponse {
-    private Integer idCaja;
-    private String codCaja;
-    private String usuApertura;
-    private Double montoApertura;
-    private String usuCierre;
-    private Double montoCierre;
-    private String turno;
-    private String estado;
+public record CajaResponse (
+    Integer idCaja,
+    String codCaja,
+    String usuApertura,
+    BigDecimal montoApertura,
+    String usuCierre,
+    BigDecimal montoCierre,
+    String turno,
+    String estado
+){
 }

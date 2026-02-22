@@ -1,12 +1,6 @@
 package com.playlandpark.playlandmanager.model.dto.carrito;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class CarritoRequest {
-    private Integer idUsuario;
-}
+public record CarritoRequest(
+        Integer idUsuario,
+        String estado
+) {}

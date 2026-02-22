@@ -1,4 +1,24 @@
 package com.playlandpark.playlandmanager.model.dto.empleado;
 
-public class EmpleadoResponse {
-}
+import com.playlandpark.playlandmanager.model.dto.summary.CargoSummary;
+
+import java.time.LocalDate;
+
+public record EmpleadoResponse(
+        Integer idEmpleado,
+        String tipoDoc,
+        String numeDoc,
+        String nombre,
+        String apePaterno,
+        String apeMaterno,
+        String genero,
+        LocalDate fechaNac,
+        String correo,
+        String telefono,
+        String direccion,
+        Integer local,
+        CargoSummary cargo,
+        LocalDate fechaInicio,
+        LocalDate fechaFin,
+        Boolean activo
+) {}

@@ -17,21 +17,14 @@ public class JuegosUso {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idJuegosUso;
 
-    @ManyToOne
-    @JoinColumn(name = "idJuego")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idJuego", nullable = false)
     private Juego juego;
 
     private String cantidadUso;
+
+    @Column(nullable = false)
     private LocalDate fechaUso;
     private String descripcion;
-    private String estado;
-
-    @Column(nullable = false)
-    private LocalDate ultMant;
-
-    @Column(nullable = false)
-    private LocalDate proxMant;
-
-    private Boolean activo;
 }
 

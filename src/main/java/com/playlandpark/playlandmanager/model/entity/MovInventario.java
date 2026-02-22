@@ -18,14 +18,20 @@ public class MovInventario {
     private Integer idMovInv;
 
     @ManyToOne
-    @JoinColumn(name = "idBoleta")
+    @JoinColumn(name = "idBoleta") // Nullable true para ajustes manuales
     private Boleta boleta;
 
     @ManyToOne
-    @JoinColumn(name = "idProducto")
+    @JoinColumn(name = "idProducto",   nullable = false)
     private Producto producto;
 
+    @Column(nullable = false)
     private Integer cantidad;
+
+    @Column(nullable = false)
     private LocalDate fecha;
+
+    @Column(nullable = false)
+    private String tipoMovimiento;
 }
 

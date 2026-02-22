@@ -1,17 +1,14 @@
 package com.playlandpark.playlandmanager.model.dto.movventa;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.playlandpark.playlandmanager.model.dto.summary.CajaSummary;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class MovVentaResponse {
-    private Integer idMovVenta;
-    private String codCaja;
-    private Double monto;
-    private LocalDate fecha;
-}
+public record MovVentaResponse(
+        Integer idMovVenta,
+        CajaSummary caja,
+        BigDecimal monto,
+        LocalDate fecha,
+        String tipoMovimiento
+) {}

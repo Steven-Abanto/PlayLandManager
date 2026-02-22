@@ -1,5 +1,6 @@
 package com.playlandpark.playlandmanager.model.entity;
 
+import com.playlandpark.playlandmanager.model.enums.EstadoJuego;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,10 @@ public class Juego {
     private String nombre;
     private String tipo;
     private String descripcion;
-    private String estado;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private EstadoJuego estado;
 
     @Column(nullable = false)
     private LocalDate ultMant;
@@ -31,6 +35,7 @@ public class Juego {
     @Column(nullable = false)
     private LocalDate proxMant;
 
-    private Boolean activo;
+    @Column(nullable = false)
+    private Boolean activo = true;
 }
 
