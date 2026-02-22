@@ -1,7 +1,7 @@
 package com.playlandpark.playlandmanager.model.enums;
 
 public enum EstadoJuego {
-    ACTIVO,
+    OPERATIVO,
     REQ_MANTENIMIENTO,
     EN_MANTENIMIENTO,
     INACTIVO

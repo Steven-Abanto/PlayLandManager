@@ -1,6 +1,6 @@
 package com.playlandpark.playlandmanager.model.dto.empleado;
 
-import com.playlandpark.playlandmanager.model.dto.summary.CargoSummary;
+import com.playlandpark.playlandmanager.model.dto.cargo.CargoResponse;
 
 import java.time.LocalDate;
 
@@ -17,7 +17,7 @@ public record EmpleadoResponse(
         String telefono,
         String direccion,
         Integer local,
-        CargoSummary cargo,
+        CargoResponse cargo,
         LocalDate fechaInicio,
         LocalDate fechaFin,
         Boolean activo

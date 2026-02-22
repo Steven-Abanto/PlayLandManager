@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "caja")
@@ -28,10 +29,14 @@ public class Caja {
 
     private String usuCierre;
 
+    private LocalDateTime horaApertura;
+
     @Column(precision = 15, scale = 2)
     private BigDecimal montoCierre;
 
-    private String turno;
+    private LocalDateTime horaCierre;
+
+    @Column(nullable = false)
     private String estado;
 }
 

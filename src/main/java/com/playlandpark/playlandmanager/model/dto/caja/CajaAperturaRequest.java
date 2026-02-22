@@ -1,9 +1,12 @@
 package com.playlandpark.playlandmanager.model.dto.caja;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 public record CajaAperturaRequest (
     String codCaja,
     String usuApertura,
-    Double montoApertura,
-    String turno
+    BigDecimal montoApertura,
+    LocalDateTime horaApertura
 ){
 }

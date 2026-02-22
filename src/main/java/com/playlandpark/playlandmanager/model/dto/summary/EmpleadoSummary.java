@@ -1,5 +1,7 @@
 package com.playlandpark.playlandmanager.model.dto.summary;
 
+import com.playlandpark.playlandmanager.model.dto.cargo.CargoResponse;
+
 public record EmpleadoSummary(
         Integer idEmpleado,
         String tipoDoc,
@@ -8,5 +10,5 @@ public record EmpleadoSummary(
         String apePaterno,
         String apeMaterno,
         String correo,
-        CargoSummary cargo
+        CargoResponse cargo
 ) {}
